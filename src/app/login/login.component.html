@@ -1,0 +1,36 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="txt">
+      <h1>Welcome again!</h1>
+      <p>Log in to follow and order your <br>favorite food.</p>
+      <div id="btn-register">
+          <!-- Botão de registro com (click) para navegação ou outra ação -->
+          <button type="button" (click)="onRegister()">Register</button>
+      </div>
+    </div>
+
+    <!-- seção transparente -->
+    <div class="profile"> 
+      <!-- Grupo de input para Username -->
+      <div class="input-group">
+        <img src="../../assets/username.png" alt="Username Icon">
+        <input type="text" formControlName="username" placeholder="Username" required>
+      </div>
+
+      <!-- Grupo de input para Password -->
+      <div class="input-group">
+        <img src="../../assets/password_icon.png" alt="Password Icon">
+        <input type="password" formControlName="password" placeholder="Password" required>
+      </div>
+
+      <div class="forgot-password-container">
+        <input type="checkbox" class="check">
+        <span>Forgot password?</span>
+      </div>
+      <div id="btn-login">
+        <!-- Botão de envio do formulário -->
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      </div> 
+    </div>
+  </form>
+</div>
