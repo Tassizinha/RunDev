@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.sass'
+  styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
 isMenuOpen: any;
