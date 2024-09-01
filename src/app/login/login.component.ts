@@ -3,43 +3,53 @@ import { ReactiveFormsModule } from '@angular/forms'; // Adicione se você estiv
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule, NgIf],
+  imports: [ReactiveFormsModule, RouterModule, NgIf, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.sass'
 })
+
 export class LoginComponent {
+
   loginForm: FormGroup; 
+  errorMessage: string = '';
+  title = 'Welcome Again!'
+  description = 'Log in to follow and order your favorite food.'
+  usernamePlaceHolder = 'Username'
+  passwordPlaceHolder = 'Password'
+  forgotPasswordText = 'Forgot password?'
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]], 
-      password: ['', [Validators.required, Validators.minLength(8)]] 
+      password: ['', [Validators.required]],
     });
   }
 
-  onSubmit(): void {
+  onRegister() {
+  
+    console.log('Redirecionando para a página de registro...');
+  } 
+
+  onLogin(): void {
     if (this.loginForm.valid) {
-      console.log('Formulário enviado com sucesso!', this.loginForm.value);
+      const {username, password} = this.loginForm.value;
+
+      if (username === 'usuario' && password === 'senha123'){
+        console.log("successful login");
+      } else  {
+          this.errorMessage = 'Username or password is incorret';
+      } 
     } else {
-      console.log('O formulário contém erros.');
-      this.loginForm.markAllAsTouched(); 
+        this.errorMessage = 'Please fill in all required fields';
+      }      
     }
   }
 
-  onRegister(): void {
-    console.log('Navegar para a página de registro');
-    // this.router.navigate(['/register']); 
-  }
 
-  get username() {
-    return this.loginForm.get('username');
-  }
 
-  get password() {
-    return this.loginForm.get('password');
-  }
-}

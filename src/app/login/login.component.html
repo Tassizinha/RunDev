@@ -1,34 +1,32 @@
 <div class="container">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
     <div class="txt">
-      <h1>Welcome again!</h1>
-      <p>Log in to follow and order your <br>favorite food.</p>
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
       <div id="btn-register">
-          <!-- Botão de registro com (click) para navegação ou outra ação -->
           <button type="button" (click)="onRegister()">Register</button>
       </div>
-    </div>
 
-    <!-- seção transparente -->
+      <div *ngIf="errorMessage" class="error">
+        {{ errorMessage}}
+      </div>
+      
+    </div>
     <div class="profile"> 
-      <!-- Grupo de input para Username -->
       <div class="input-group">
         <img src="../../assets/username.png" alt="Username Icon">
-        <input type="text" formControlName="username" placeholder="Username" required>
+        <input type="text" formControlName="username" [placeholder]="usernamePlaceHolder" required>
       </div>
-
-      <!-- Grupo de input para Password -->
       <div class="input-group">
         <img src="../../assets/password_icon.png" alt="Password Icon">
-        <input type="password" formControlName="password" placeholder="Password" required>
+        <input type="password" formControlName="password" [placeholder]="passwordPlaceHolder" required>
       </div>
 
       <div class="forgot-password-container">
         <input type="checkbox" class="check">
-        <span>Forgot password?</span>
+        <span>{{ forgotPasswordText }}</span>
       </div>
       <div id="btn-login">
-        <!-- Botão de envio do formulário -->
         <button type="submit" [disabled]="loginForm.invalid">Login</button>
       </div> 
     </div>
