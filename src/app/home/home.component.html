@@ -1,49 +1,65 @@
 <header>
-    <div class="menu-container">
-      <div class="menu-icon" (click)="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-        <!-- <nav class="nav-menu" [class.active]="isMenuOpen">
-          <a href="#">Item 1</a>
-          <a href="#">Item 2</a>
-          <a href="#">Item 3</a>
-        </nav> -->
+  <div class="container">
+    <div class="logo">
+      <img src="../../assets/LOGO.png" alt="">
     </div>
-        <div class="logo-img">
-          <img src="../../assets/LOGO.png" alt="boy on a motorbike">
-        </div>
-          <div class="icons">
-            <img src="../../assets/searchIcon.png" alt="" class="search">
-            <img src="../../assets/carIcon.png" alt="" class="carBuy">
-          </div>
-        <div class="btn">
-          <button>Login</button>
-        </div>
+    <div class="search">
+      <img src="../../assets/icon _search_.png" alt="">
+      <input type="text" name="text" placeholder="Pesquisar Restaurantes">
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Carrinho</a></li>
+        <li><a href="#">Fazer Login</a></li>
+      </ul>
+    </div>
+  </div>
 </header>
+
 <main>
   <section class="lobby">
-    <h1>MADE WITH LOVE, <br> <strong>DELIVERED WITH PASSION</strong></h1>
-    <p>The fastest delivery in your city</p>
-    <div class="btn-pedidos">
-      <button>Buy with us</button>
+    <div class="title">
+      <h1>Indeciso onde pedir sua refeição?</h1>
+      <p>Os melhores restaurantes estão aqui!</p>
     </div>
-      <div class="background-image">
-        <img src="../../assets/Ellipse 14detalheFundo.jpg" alt="">
-      </div>
-      <div class="overlay-img">
-        <img src="../../assets/celularOverlayImage.png" alt="">
-      </div>
+    <div class="btn">
+      <button>Encontre aqui</button>
+    </div>
+    <div class="imagem">
+      <img src="../../assets/hamburguer.png" alt="">
+    </div>
   </section>
 
   <section class="center">
-    <h2>HOW OUR APPLICATION WORKS</h2>
+    <div class="txt">
+      <h1>Categorias</h1>
+    </div>
+
+    <div class="categorias-img">
+      <img src="../../assets/categorias/catBebidas.png" alt="">
+      <img src="../../assets/categorias/catBurguer.png" alt="">
+      <img src="../../assets/categorias/catPizza.png" alt="">
+      <img src="../../assets/categorias/catSorvete.png" alt="">
+    </div>
   </section>
 
-  <section class="Info-Log">
-    <h2>STATES WE SERVE</h2>
+  <section class="parceria">
+    <div class="txt-parceiria">
+      <h2>Parcerias</h2>
+    </div>
+    <div class="parcerias-img">
+      <img src="../../assets/parcerias/McDonalds.png" alt="">
+      <img src="../../assets/parcerias/BK.png" alt="">
+      <img src="../../assets/parcerias/Habibs.png" alt="">
+      <img src="../../assets/parcerias/Borelli.png" alt="">
+      <img src="../../assets/parcerias/Porshe.png" alt="">
+    </div>
+  </section>
+  <section class="Afiliação">
+    <div class="txt-afilia">
+      <h3>Se afilie a nós</h3>
+    </div>
   </section>
 </main>
 <footer></footer>
-

@@ -8,17 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-isMenuOpen: any;
+
 
 
 
 ngOnInit(): void {
   throw new Error('Method not implemented.');
 }
-
-toggleMenu() {
-throw new Error('Method not implemented.');
-}
-
   
 }
