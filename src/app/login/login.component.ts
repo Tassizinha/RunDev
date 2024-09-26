@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms'; // Adicione se você estiver usando Reactive Forms
+import { ReactiveFormsModule } from '@angular/forms'; //
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
@@ -15,41 +15,34 @@ import { CommonModule } from '@angular/common';
 })
 
 export class LoginComponent {
-
   loginForm: FormGroup; 
-  errorMessage: string = '';
-  title = 'Welcome Again!'
-  description = 'Log in to follow and order your favorite food.'
-  usernamePlaceHolder = 'Username'
-  passwordPlaceHolder = 'Password'
-  forgotPasswordText = 'Forgot password?'
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]], 
-      password: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(8)]] 
     });
   }
 
-  onRegister() {
-  
-    console.log('Redirecionando para a página de registro...');
-  } 
-
-  onLogin(): void {
+  onSubmit(): void {
     if (this.loginForm.valid) {
-      const {username, password} = this.loginForm.value;
-
-      if (username === 'usuario' && password === 'senha123'){
-        console.log("successful login");
-      } else  {
-          this.errorMessage = 'Username or password is incorret';
-      } 
+      console.log('Formulário enviado com sucesso!', this.loginForm.value);
     } else {
-        this.errorMessage = 'Please fill in all required fields';
-      }      
+      console.log('O formulário contém erros.');
+      this.loginForm.markAllAsTouched(); 
     }
   }
 
+  onRegister(): void {
+    console.log('Navegar para a página de registro');
+    // this.router.navigate(['/register']); 
+  }
 
+  get username() {
+    return this.loginForm.get('username');
+  }
 
+  get password() {
+    return this.loginForm.get('password');
+  }
+}
