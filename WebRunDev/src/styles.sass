@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 $pages-color: #FFFFFF
 $text-color: #000000
 $fl-color: #58B814
 $bckBL-color: #E68019
 // Configurações gerais
-html, body 
+*
     margin: 0
     padding: 0
     color: $text-color
+    font-family: Poppins
 
 //Configurações gerais
 
@@ -18,11 +20,10 @@ html, body
 
 header
     height: 80px
-    // width: 100%
     display: flex
     align-items: center 
     justify-content: center
-    padding: 0 144px 
+    padding: 0 80px 
 
 //Configurações de imagem
 .logo
@@ -45,15 +46,20 @@ header
         display: flex
         align-items: center
         justify-content: space-between
-        width: 100%
+        width: 100% 
         li
             list-style: none
 
             a
                 color: #0F0326
+                position: relative
+                background: linear-gradient(to top, $bckBL-color 100%, transparent 0%) no-repeat bottom
+                background-size: 100% 1px
+                transition: background-size 0.5s ease, color 0.5s ease
             a:hover
-                border-bottom: 3px solid $bckBL-color
-            
+                color:  $bckBL-color
+                background-size: 100% 20%
+        
 li a 
     text-decoration: none
 
@@ -70,7 +76,7 @@ li a
         height: 40px
         border: none
         outline: none
-        background-color: #bfff91
+        background-color: #f0f0f0
         background-image: url('assets/icon _search_.png')
         background-repeat: no-repeat
         background-position: calc(100% - 10px) center
