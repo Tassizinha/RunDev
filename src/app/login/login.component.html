@@ -1,0 +1,53 @@
+<header>  
+  <div class="container">
+    <div class="logo">
+      <img src="../../assets/LOGO.png" alt="">
+    </div>
+    <div class="search">
+      <input type="text" name="text" placeholder="Pesquisar Restaurantes" >
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Carrinho</a></li>
+        <li><a href="#">Fazer Login</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <form>
+    <div class="txt">
+      <h1></h1>
+      <p></p>
+      <div id="btn-register">
+          <button type="button" (click)="onRegister()">Register</button>
+      </div>
+
+      <div *ngIf="" class="error">
+    
+      </div>
+      
+    </div>
+    <div class="profile"> 
+      <div class="input-group">
+        <img src="../../assets/username.png" alt="Username Icon">
+        <input type="text" formControlName="username" [placeholder]="" required>
+      </div>
+      <div class="input-group">
+        <img src="../../assets/password_icon.png" alt="Password Icon">
+        <input type="password" formControlName="password" [placeholder]="" required>
+      </div>
+
+      <div class="forgot-password-container">
+        <input type="checkbox" class="check">
+        <span></span>
+      </div>
+      <div id="btn-login">
+        <!-- Botão de envio do formulário -->
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      </div> 
+    </div>
+  </form>
+</div>
