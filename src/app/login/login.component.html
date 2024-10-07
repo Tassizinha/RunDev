@@ -17,37 +17,18 @@
 </header>
 
 <div class="container">
-  <form>
-    <div class="txt">
-      <h1></h1>
-      <p></p>
-      <div id="btn-register">
-          <button type="button" (click)="onRegister()">Register</button>
-      </div>
+  <div class="entreJa">
+    <img src="../../assets/Vector_capacete.png" alt="capacete de moto">
+    <h1>Entre já</h1>
+  </div>
 
-      <div *ngIf="" class="error">
-    
-      </div>
-      
-    </div>
-    <div class="profile"> 
-      <div class="input-group">
-        <img src="../../assets/username.png" alt="Username Icon">
-        <input type="text" formControlName="username" [placeholder]="" required>
-      </div>
-      <div class="input-group">
-        <img src="../../assets/password_icon.png" alt="Password Icon">
-        <input type="password" formControlName="password" [placeholder]="" required>
-      </div>
-
-      <div class="forgot-password-container">
-        <input type="checkbox" class="check">
-        <span></span>
-      </div>
-      <div id="btn-login">
-        <!-- Botão de envio do formulário -->
-        <button type="submit" [disabled]="loginForm.invalid">Login</button>
-      </div> 
-    </div>
-  </form>
+  <div class="formulario">
+    <form action="">
+      <label for="">E-mail</label>
+      <input type="email" name="email" placeholder="Digite seu email">
+      <label for="">Senha</label>
+      <input type="email" name="email" placeholder="Digite sua senha">
+      <input type="checkbox"> Esqueceu a senha kenga?
+    </form>
+  </div>
 </div>
