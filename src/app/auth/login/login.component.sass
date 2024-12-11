@@ -1,0 +1,110 @@
+@import '../../../styles.sass'
+$entre-ja: #119935
+$form-color: #F5841F 
+$font-color: #ffffff 
+$error-color: #FF0000
+.containerlogin 
+  width: 960px
+  height: 350px
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 0px
+  position: absolute 
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%) 
+
+.entreJa 
+  width: 330px
+  height: 350px 
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center 
+  background-color: $entre-ja
+  border-radius: 15px
+  color: $font-color
+  padding: 20px 
+ 
+
+.formulario 
+  width: 630px
+  height: 350px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 20px 
+  background-color: $form-color
+  border-radius: 15px
+
+  form 
+    display: flex
+    flex-direction: column
+    gap: 15px 
+
+    label 
+      font-size: 22px
+      font-weight: bold
+      color: $font-color
+ 
+    input[type="email"],
+    input[type="password"] 
+      width: 100%
+      padding: 10px 0
+      border: none
+      border-bottom: 2px solid $font-color 
+      background: none 
+      font-size: 14px
+      color: $font-color 
+    
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder 
+      color: rgba($font-color, 0.6) 
+    
+    input[type="email"]:focus,
+    input[type="password"]:focus 
+      outline: none
+      border-bottom: 2px solid darken($font-color, 10%) 
+   
+    .checkbox-wrapper 
+      display: flex
+      align-items: center
+      gap: 10px 
+      font-size: 12px
+      color: $font-color  
+    
+    input[type="checkbox"] 
+      margin-top: 0px
+     
+    button 
+      width: 100px
+      height: 40px
+      background-color: $font-color
+      color: $form-color
+      border: none
+      border-radius: 9px
+      font-weight: bold
+      font-size: 17px
+      cursor: pointer
+      align-self: center
+      margin-top: 15px
+
+    button:hover 
+      opacity: 1.0  
+
+  .error-message
+      font-size: 12px
+      color: $error-color
+      margin-top: -10px
+      padding-left: 5px
+
+#capacete
+    width: 100px 
+    height: auto
+    margin-bottom: 30px 
+h1
+  font-size: 34px 
+  font-weight: bold
+  margin: 0
+  color: $pages-color 
